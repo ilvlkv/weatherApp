@@ -86,34 +86,6 @@ function checkSearchRequestValue() {
       alert("Error: Input location name in search line")
     );
   }
-
-  // if (check == true) {
-  //   clearTabsContentBeforeLoading();
-
-  //   return (
-  //     requestWeatherDataFromServer(),
-  //     requestCurrentTimeAndDate(),
-  //     setTimeout(() => {
-  //       renderFirstTabContent(),
-  //         renderSecondTabContent(),
-  //         renderThirdTabContent();
-  //     }, 1000)
-  //   );
-  // } else {
-  //   if (requestValue != "") {
-  //     return (
-  //       requestWeatherDataFromServer(),
-  //       requestCurrentTimeAndDate(),
-  //       setTimeout(() => {
-  //         renderFirstTabContent(),
-  //           renderSecondTabContent(),
-  //           renderThirdTabContent();
-  //       }, 0)
-  //     );
-  //   } else {
-
-  //   }
-  // }
 }
 
 function checkLocationSaves() {
