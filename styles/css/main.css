@@ -1,0 +1,590 @@
+@font-face {
+  font-family: "Comfortaa";
+  src: url(/styles/fonts/Comfortaa-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Comfortaa";
+  src: url(/styles/fonts/Comfortaa-Bold.ttf);
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  font-family: "Comfortaa";
+  font-weight: 400;
+  font-style: normal;
+}
+
+.container-fluid {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(90deg, #ffcfd2, #fde4cf, #fbf8cc);
+}
+
+.container {
+  box-shadow: 0 0 100px 5px rgba(255, 255, 255, 0.349);
+}
+
+.search__form {
+  display: flex;
+  width: 1055px;
+  height: 50px;
+  border-top: solid 5px black;
+  border-left: solid 5px black;
+  border-right: solid 5px black;
+  border-radius: 10px 10px 0 0;
+}
+
+.search__form input[type="text"] {
+  width: 1000px;
+  outline: none;
+  background: none;
+  border: none;
+}
+
+.search__form input[type="text"]:focus {
+  color: black;
+  font-family: "Comfortaa";
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.search__form input[type="text"]::placeholder {
+  font-family: "Comfortaa";
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  padding-left: 5%;
+}
+
+.search__form input[type="submit"] {
+  width: 40px;
+  margin-top: 5px;
+  margin-right: 15px;
+  margin-left: 15px;
+  background: none;
+  background-image: url(/styles/images/search.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  border: none;
+}
+
+.weather__block {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 0 0 10px 10px;
+  border: solid 5px black;
+}
+
+.tab__block {
+  width: 800px;
+  height: 600px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tabs__content {
+  width: 800px;
+  height: 550px;
+}
+
+.tabs__navigation {
+  width: 800px;
+  height: 50px !important;
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 1px;
+  border-top: solid 5px black;
+  border-radius: 0 0 10px 10px;
+}
+
+.tabs__nav-btn {
+  width: 33.33333%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+  border-left: solid 2px black;
+  font-family: "Comfortaa";
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.tabs__nav-btn:hover,
+.tabs__nav-btn.active {
+  background-color: black;
+  color: white;
+}
+
+.saved__list {
+  width: 250px;
+  height: 600px;
+  border-left: solid 5px black;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list__header {
+  width: 80%;
+  height: 10%;
+
+  border-bottom: solid 5px white;
+  font-size: 20px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.content__row {
+  width: 100%;
+  height: 30%;
+  display: flex;
+
+  padding-top: 5%;
+  justify-content: flex-start;
+}
+
+.temperature__box {
+  width: 40%;
+  height: 100%;
+  margin-left: 5%;
+
+  display: flex;
+  align-items: center;
+}
+
+.temperature__box p {
+  font-size: 160px;
+}
+
+.temperature__box img {
+  width: 30%;
+  margin-bottom: 100px;
+  margin-left: 5px;
+}
+
+.weather__picture {
+  height: 100%;
+  width: 40%;
+  margin-right: 5%;
+  margin-left: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.weather__picture img {
+  width: 100%;
+}
+
+.tabs__item {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: none;
+}
+
+.tabs__item.active {
+  display: block;
+}
+
+.navigation__row {
+  height: 15%;
+  width: 100%;
+  margin-bottom: 5%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.navigation__row p {
+  margin: 0 0 0 5%;
+  font-weight: 600;
+  font-size: 65px;
+}
+
+.save__location-btn {
+  width: 5%;
+  height: 55%;
+  background: none;
+  border: none;
+  background-image: url(/styles/images/heart.png);
+  background-size: cover;
+  margin-right: 5%;
+  padding-right: 10%;
+  cursor: pointer;
+  transition: 500ms;
+  padding-bottom: 10%;
+
+  display: none;
+}
+
+.hide_element {
+  animation: pulseAnim 2s ease 0s 1 normal forwards;
+
+  filter: opacity(0);
+
+  transition: 1s;
+}
+
+.save__location-btn:hover,
+.save__location-btn.active {
+  background-image: url(/styles/images/heart_active.png);
+  background-size: cover;
+}
+
+.current__time__row {
+  margin-bottom: 12%;
+  height: 10%;
+}
+
+.current__time__row p {
+  margin: 2% 0 0 5%;
+  font-size: 30px;
+}
+
+.current__time__row p span {
+  font-weight: 600;
+}
+
+.location__row {
+  height: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.location__row p {
+  margin: 0 0 0 5%;
+  font-size: 30px;
+  color: white;
+}
+
+.city__row {
+  width: 100%;
+  height: 15%;
+  padding-top: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.city__row p {
+  font-weight: 600;
+  font-size: 65px;
+  margin: 0;
+  margin-left: 5%;
+}
+
+.details__block {
+  height: 63%;
+  padding-left: 5%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.details__block p {
+  font-size: 35px;
+  margin: 0;
+  margin-bottom: 5%;
+}
+
+.details__block p span {
+  font-weight: 600;
+}
+
+.card__list {
+  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+
+.card__list::-webkit-scrollbar {
+  width: 0;
+}
+
+.card {
+  width: 26.6666667%;
+  height: 38%;
+  margin-left: 3.9%;
+  border: solid 2px black;
+  padding-left: 1%;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.144);
+  transition: 500ms;
+  background-color: rgba(255, 255, 255, 0.384);
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+}
+.card:hover {
+  transform: scale(1.2);
+  backdrop-filter: blur(2px);
+  background-color: rgba(255, 255, 255, 0.712);
+}
+
+.card p {
+  margin: 0;
+}
+
+.card__top {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-weight: 600;
+}
+
+.card__bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3%;
+}
+
+.card__weather {
+  /* height: 20%; */
+  width: 35%;
+
+  margin-right: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5%;
+
+  background-color: rgba(0, 0, 0, 0.158);
+  border-radius: 10px;
+}
+
+.card__weather p {
+  font-weight: 600;
+}
+
+.card img {
+  width: 75%;
+  height: 75%;
+}
+
+.card__temp-block p:nth-child(2) {
+  padding-top: 5%;
+}
+
+.card__temp-block p span {
+  font-weight: 600;
+}
+
+.spinner {
+  width: 200px;
+  height: 120px;
+  background-image: url(/styles/images/spinner.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: spinner 1.5s linear infinite;
+
+  display: none;
+}
+
+.city__row .spinner {
+  width: 125px;
+  height: 125px;
+  margin-left: 70%;
+  margin-top: 10%;
+}
+
+.spinner.active {
+  display: block;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.locations__list {
+  width: 80%;
+  height: 90%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow-y: scroll;
+}
+
+.locations__list::-webkit-scrollbar {
+  width: 0;
+}
+
+.saved__location_element {
+  background: none;
+  border: none;
+
+  width: 100%;
+
+  margin-top: 10%;
+
+  font-family: "Comfortaa";
+  font-size: 16px;
+  color: black;
+
+  border-bottom: 5px solid black;
+
+  display: flex;
+  justify-content: space-between;
+
+  transition: all 1s;
+}
+
+.saved__location_element button {
+  transition: 1s;
+  background: none;
+  border: none;
+
+  font-family: "Comfortaa";
+  font-size: 16px;
+  color: black;
+
+  margin-bottom: 5%;
+
+  cursor: pointer;
+}
+
+.city_btn:hover {
+  transform: scale(1.2);
+
+  font-weight: 600;
+
+  margin-left: 5%;
+  margin-right: 20%;
+}
+
+.saved__location_element.active {
+  border-color: white;
+}
+
+button.delete__location {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url(/styles/images/delete.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  animation: entranceAnim 1s ease 0s 1 normal forwards;
+
+  display: none;
+}
+
+button.delete__location:hover {
+  animation: shakeAnim 4s ease 0s infinite normal forwards;
+}
+
+@keyframes entranceAnim {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes entranceAnim2 {
+  0% {
+    filter: opacity(0);
+  }
+
+  100% {
+    filter: opacity(1);
+  }
+}
+
+@keyframes shakeAnim {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateY(-8px);
+  }
+
+  20%,
+  40%,
+  60% {
+    transform: translateY(8px);
+  }
+
+  80% {
+    transform: translateY(6.4px);
+  }
+
+  90% {
+    transform: translateY(-6.4px);
+  }
+}
+
+@keyframes pulseAnim {
+  0% {
+    animation-timing-function: ease-out;
+    transform: scale(1.2);
+    transform-origin: center center;
+  }
+
+  10% {
+    animation-timing-function: ease-in;
+    transform: scale(1.1);
+  }
+
+  17% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+
+  33% {
+    animation-timing-function: ease-in;
+    transform: scale(0.9);
+  }
+
+  45% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+}
+
+p.current__date {
+  color: white;
+  font-weight: 600;
+}
+
+div#tab__3 div.city__row {
+  justify-content: space-between;
+}
+
+div#tab__3 div.city__row div.spinner {
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  margin-right: 5%;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/styles/css/main.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="container">
+        <form
+          action=""
+          class="search__form"
+          onsubmit="return false"
+          autocomplete="off"
+        >
+          <input
+            type="text"
+            placeholder="Search the location"
+            id="search__input"
+            value=""
+          />
+          <input type="submit" value="" id="submit__search" />
+        </form>
+        <div class="weather__block">
+          <div class="tab__block">
+            <div class="tabs__content">
+              <div class="tabs__item" id="tab__1">
+                <div class="content__row">
+                  <div class="temperature__box">
+                    <p id="first_tab__graduses">-</p>
+                    <img src="/styles/images/celsius.png" alt="celsius" />
+                  </div>
+                  <div class="weather__picture">
+                    <img src="" " alt="" />
+                    <div class="spinner" id="loading"></div>
+                  </div>
+                </div>
+                <div class="current__time__row">
+                  <p id="current__date" class="">Date: -</p>
+                  <p>Current local time is <span id="current__time">-</span></p>
+                </div>
+                <div class="location__row">
+                  <p>Location:</p>
+                </div>
+                <div class="navigation__row">
+                  <p id="first_tab__city_name">-</p>
+                  <button
+                    class="save__location-btn"
+                    id="saveLocation_btn"
+                  ></button>
+                </div>
+              </div>
+              <div class="tabs__item" id="tab__2">
+                <div class="city__row">
+                  <p id="city__name">-</p>
+                  <div class="spinner" id="loading"></div>
+                </div>
+                <div class="details__block">
+                  <p>
+                    Temperature:
+                    <span id="current__temperature">-</span>
+                  </p>
+                  <p>
+                    Feels like:
+                    <span id="current__temperature__feels">-</span>
+                  </p>
+                  <p>
+                    Weather:
+                    <span id="current__weather">-</span>
+                  </p>
+                  <p>
+                    Sunrise:
+                    <span id="sunrise__time">-</span>
+                  </p>
+                  <p>
+                    Sunset:
+                    <span id="sunset__time">-</span>
+                  </p>
+                </div>
+              </div>
+              <div class="tabs__item" id="tab__3">
+                <div class="city__row">
+                  <p id="forecast_tab__city_name">-</p>
+                  <div class="spinner" id="loading_forecast"></div>
+                </div>
+                <div class="card__list"></div>
+              </div>
+            </div>
+            <div class="tabs__navigation">
+              <button class="tabs__nav-btn" data-tab="#tab__1">Now</button>
+              <button class="tabs__nav-btn" data-tab="#tab__2">Details</button>
+              <button class="tabs__nav-btn" data-tab="#tab__3">Forecast</button>
+            </div>
+          </div>
+          <div class="saved__list">
+            <div class="list__header">
+              <p>Added locations:</p>
+            </div>
+            <div class="locations__list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/scripts/main.js"></script>
+  </body>
+</html>
