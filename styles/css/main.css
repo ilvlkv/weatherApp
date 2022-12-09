@@ -122,6 +122,14 @@ body {
   font-size: 20px;
 }
 
+.tabs__nav-btn:nth-child(1) {
+  border-right: solid 2px black;
+}
+
+.tabs__nav-btn:nth-child(3) {
+  border-left: solid 2px black;
+}
+
 .tabs__nav-btn:hover,
 .tabs__nav-btn.active {
   background-color: black;
