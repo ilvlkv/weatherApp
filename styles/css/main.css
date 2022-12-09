@@ -25,6 +25,7 @@ body {
   align-items: center;
   min-height: 100vh;
   background-image: linear-gradient(90deg, #ffcfd2, #fde4cf, #fbf8cc);
+  border-radius: 10px;
 }
 
 .container {
