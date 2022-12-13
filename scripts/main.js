@@ -32,7 +32,7 @@ function clickOnTab(item) {
 
 const weatherObjectsTempArray = [];
 
-const savedLocationsList = [];
+const savedLocationsList = new Set();
 
 const forecastObjectsTempArray = [];
 
@@ -93,9 +93,7 @@ function checkLocationSaves() {
 
   const value = requestValue.slice(0, 1).toUpperCase() + requestValue.slice(1);
 
-  obj = savedLocationsList.find((item) => item.includes(value));
-
-  check = savedLocationsList.includes(obj);
+  check = savedLocationsList.has(value);
 
   return check;
 }
@@ -463,19 +461,13 @@ function renderForecastCard(data) {
 // добавление локации в избранное
 
 function saveLocationToFavorites() {
-  const obj = weatherObjectsTempArray.find(
-    (item) => item.name == cityNameExternalBuffer
-  );
+  const flag = savedLocationsList.has(cityNameExternalBuffer);
 
-  const savedObj = savedLocationsList.find(
-    (item) => item == cityNameExternalBuffer
-  );
+  if (flag == true) {
+    let check = confirm("Вы точно хотите удалить данную локацию?");
 
-  if (savedObj) {
-    let flag = confirm("Вы точно хотите удалить данную локацию?");
-
-    if (flag == true) {
-      savedLocationsList.splice(savedLocationsList.indexOf(savedObj), 1);
+    if (check == true) {
+      savedLocationsList.delete(cityNameExternalBuffer);
 
       document.querySelector(".save__location-btn").classList.remove("active");
 
@@ -488,7 +480,7 @@ function saveLocationToFavorites() {
       changeDisplayFlagForLocation();
     }
   } else {
-    savedLocationsList.push(obj.name);
+    savedLocationsList.add(cityNameExternalBuffer);
 
     document.querySelector(".save__location-btn").classList.add("active");
 
@@ -580,7 +572,7 @@ function changeDisplayFlagForLocation() {
 function getSavedLocationListAfterReload() {
   for (let i = 0; i < localStorage.length; i++) {
     let key = localStorage.key(i);
-    savedLocationsList.push(key);
+    savedLocationsList.add(key);
   }
 }
 
@@ -595,6 +587,19 @@ function renderAfterReload() {
 
     if (obj == `{"display":"start"}`) {
       document.getElementById("search__input").value = key;
+    }
+  }
+
+  if (!document.getElementById("search__input").value) {
+    for (let i = 0; i < localStorage.length; i++) {
+      let key = localStorage.key(i);
+
+      return (
+        (cityNameExternalBuffer = key),
+        (document.getElementById("search__input").value = key),
+        checkSearchRequestValue(),
+        (document.getElementById("search__input").value = "")
+      );
     }
   }
 
@@ -630,6 +635,6 @@ saveLocation_btn.addEventListener("click", saveLocationToFavorites);
 
 window.onload = getSavedLocationListAfterReload();
 
-if (savedLocationsList.length != 0) {
+if (savedLocationsList.size != 0) {
   window.onload = renderAfterReload();
 }
